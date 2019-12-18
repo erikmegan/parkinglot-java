@@ -29,6 +29,6 @@ public class InputUtilsTest {
   public void parseTextInput() {
     inputParser.parseTextInput("test");
     inputParser.parseTextInput("status");
-    assertEquals("Invalidinput", outContent.toString().trim().replace(" ", ""));
+    assertEquals("Invalidinput\nNoparkinglotcreated", outContent.toString().trim().replace(" ", ""));
   }
 }

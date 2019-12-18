@@ -28,7 +28,9 @@ public class Main {
       }while (!exit);
     }
     else if (args.length == 1) {
-
+      inputUtils.parseFileInput(args[0]);
+    }else{
+      System.out.println("invalid command");
     }
   }
 

@@ -2,6 +2,11 @@ package com.gojek.assignment.parkinglot.utility;
 
 import com.gojek.assignment.parkinglot.service.api.ParkingLotManagement;
 import com.gojek.assignment.parkinglot.service.impl.ParkingLotManagementImpl;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -48,6 +53,26 @@ public class InputUtils {
     } catch (IllegalAccessException e) {
       e.printStackTrace();
     } catch (InvocationTargetException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void parseFileInput(String filePath) {
+
+    File inputFile = new File(filePath);
+
+    try {
+      BufferedReader br = new BufferedReader(new FileReader(inputFile));
+      String line;
+
+      try {
+        while ((line = br.readLine()) != null) {
+          parseTextInput(line.trim());
+        }
+      } catch (IOException ex) {
+        ex.printStackTrace();
+      }
+    } catch (FileNotFoundException e) {
       e.printStackTrace();
     }
   }
