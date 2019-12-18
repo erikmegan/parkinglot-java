@@ -1,5 +1,6 @@
 package com.gojek.assignment.parkinglot.service.impl;
 
+import com.gojek.assignment.parkinglot.entity.ParkingSlot;
 import com.gojek.assignment.parkinglot.service.api.ParkingLotManagement;
 
 /**
@@ -7,13 +8,17 @@ import com.gojek.assignment.parkinglot.service.api.ParkingLotManagement;
  */
 public class ParkingLotManagementImpl implements ParkingLotManagement {
 
+  private int availableSlot;
+  private ParkingSlot[] parkingSlots;
+
+  public ParkingLotManagementImpl() {
+  }
+
   @Override
   public void createSlot(String size){
-
   }
   @Override
   public void status(){
-
   }
   @Override
   public void fillSlot(String registrationNumber, String vehicleColor){
